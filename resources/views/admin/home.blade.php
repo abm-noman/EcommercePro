@@ -1,8 +1,30 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Welcome Admin') }}
-        </h2>
-    </x-slot>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    @include('admin.css')
+    </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_sidebar.html -->
+      @include('admin.sidebar')
+      <!-- partial -->
+      
+        <!-- partial:partials/_navbar.html -->
+       @include('admin.header')
+       
+        <!-- partial -->
+        @include('admin.body')
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    @include('admin.script')
+    
+    <!-- End custom js for this page -->
 
-</x-app-layout>
+    <li>
+          <x-app-layout>
+
+          </x-app-layout>
+        </li>
+  </body>
+</html>
