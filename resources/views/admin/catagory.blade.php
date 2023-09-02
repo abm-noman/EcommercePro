@@ -20,6 +20,14 @@
             width: 50%;
             margin-bottom: 20px;
         }
+        .centre{
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+            text-align: center;
+            margin-top: 30px;
+            border: 3px solid greenyellow;
+        }
     </style>
     </head>
   <body>
@@ -43,24 +51,42 @@
                 {{ session()->get('message') }}
 
 
-
+    </div>
 
             @endif
 
 
             <div class="div_center">
-                <h3 class="h2_font">Add Catagory</h3>
+                <h3 class="h2_font">Add Category</h3>
 
                 <form action="{{url('/add_catagory')}}" method="POST">
                     @csrf
-                    <input type="text" class="input_color" name="catagory" id="" placeholder="Write Catagory Name">
+                    <input type="text" class="input_color" name="catagory" id="" placeholder="Write Category Name">
                     <input type="submit" class="btn btn-primary" name="submit" value="Add Catagory">
                 </form>
 
-
-
-
             </div>
+            <table class="centre">
+                <tr>
+                    <th>Catagory Name</th>
+                    <th>Action</th>
+                </tr>
+                
+               @foreach($data as $data)
+                <tr>
+                    <td>{{$data->catagory_name}}</td>
+                    <td>
+                        <a href="{{url('edit_catagory', $data->id)}}" class="btn btn-warning">Edit</a>
+                        <a onclick="return confirm('Are You Sure to Delete?')" href="{{url('delete_catagory', $data->id)}}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                @endforeach
+
+            </table>
+
+
+
+
           </div>
         </div>
         <!-- main-panel ends -->
