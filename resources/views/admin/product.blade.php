@@ -14,7 +14,17 @@
        @include('admin.header')
        
         <!-- partial -->
-        @include('admin.body')
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <h2>Add Product</h2>
+
+          <div class="div_center">
+
+          </div>
+
+          </div>
+            <!-- content-wrapper ends -->
+        </div>
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
