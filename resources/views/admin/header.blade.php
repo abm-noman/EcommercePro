@@ -148,10 +148,10 @@
             </a>
             <div class="dropdown-divider"></div>
             <p class="p-3 mb-0 text-center">See all notifications</p>
-            
+
           </div>
         </li>
-        
+
     </div>
   </nav>
 </div>
